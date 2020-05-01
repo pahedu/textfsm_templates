@@ -1,0 +1,7 @@
+Value INTERFACE (\S+)
+Value LINK_TYPE (\S+)
+Value PVID (\d+)
+Value VLAN_LIST (\S+)
+
+Start
+  ^\s*${INTERFACE}\s+${LINK_TYPE}\s+${PVID}\s+${VLAN_LIST} -> Record

@@ -1,0 +1,5 @@
+Value LLDP_STATUS (enabled|disabled)
+
+Start
+  ^\s*LLDP\s+Status\s+:${LLDP_STATUS} -> Record
+

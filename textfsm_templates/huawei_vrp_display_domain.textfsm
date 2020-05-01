@@ -1,0 +1,6 @@
+Value DOMAIN_INDEX (\d+)
+Value DOMAIN_NAME (\S+)
+
+Start
+  ^\s*${DOMAIN_INDEX}\s+${DOMAIN_NAME} -> Record
+

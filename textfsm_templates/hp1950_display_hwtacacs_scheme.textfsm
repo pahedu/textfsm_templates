@@ -1,0 +1,40 @@
+Value TEMPLATE_NAME (\S+)
+Value PRIMARY_AUTHENTICATION_SERVER (\S+)
+Value PRIMARY_AUTHORIZATION_SERVER (\S+)
+Value PRIMARY_ACCOUNTING_SERVER (\S+)
+Value SECONDARY_AUTHENTICATION_SERVER (\S+)
+Value SECONDARY_AUTHORIZATION_SERVER (\S+)
+Value SECONDARY_ACCOUNTING_SERVER (\S+)
+Value QUIET_INTERVAL_MIN (\d+)
+Value RESPONSE_TIMEOUT_SEC (\d+)
+Value DOMAIN_INCLUDED (\S+)
+
+Start
+  ^\s*HWTACACS Scheme Name\s+:\s+${TEMPLATE_NAME}
+  ^\s*Primary Auth Server: -> PRIMARY_AUTHENTICATION_SERVER
+  ^\s*Primary Author Server: -> PRIMARY_AUTHORIZATION_SERVER
+  ^\s*Primary Acct Server: -> PRIMARY_ACCOUNTING_SERVER
+  ^\s*Secondary Auth Server: -> SECONDARY_AUTHENTICATION_SERVER
+  ^\s*Secondary Author Server: -> SECONDARY_AUTHORIZATION_SERVER
+  ^\s*Secondary Acct Server: -> SECONDARY_ACCOUNTING_SERVER
+  ^\s*Server Quiet Period\(minutes\)\s+:\s+${QUIET_INTERVAL_MIN}
+  ^\s*Response Timeout Interval\(seconds\)\s+:\s+${RESPONSE_TIMEOUT_SEC}
+  ^\s*Username Format\s+:\s+${DOMAIN_INCLUDED} -> Record
+
+PRIMARY_AUTHENTICATION_SERVER
+  ^\s*IP\s+:\s${PRIMARY_AUTHENTICATION_SERVER}\s+Port:\s+\d+\s+State:\s+\S+ -> Start
+
+PRIMARY_AUTHORIZATION_SERVER
+  ^\s*IP\s+:\s${PRIMARY_AUTHORIZATION_SERVER}\s+Port:\s+\d+\s+State:\s+\S+ -> Start
+
+PRIMARY_ACCOUNTING_SERVER
+  ^\s*IP\s+:\s${PRIMARY_ACCOUNTING_SERVER}\s+Port:\s+\d+\s+State:\s+\S+ -> Start
+
+SECONDARY_AUTHENTICATION_SERVER
+  ^\s*IP\s+:\s${SECONDARY_AUTHENTICATION_SERVER}\s+Port:\s+\d+\s+State:\s+\S+ -> Start
+
+SECONDARY_AUTHORIZATION_SERVER
+  ^\s*IP\s+:\s${SECONDARY_AUTHORIZATION_SERVER}\s+Port:\s+\d+\s+State:\s+\S+ -> Start
+
+SECONDARY_ACCOUNTING_SERVER
+  ^\s*IP\s+:\s${SECONDARY_ACCOUNTING_SERVER}\s+Port:\s+\d+\s+State:\s+\S+ -> Start

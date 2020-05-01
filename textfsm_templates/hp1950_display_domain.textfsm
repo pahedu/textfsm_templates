@@ -1,0 +1,5 @@
+Value DOMAIN_NAME (\S+)
+
+Start
+  ^\s*Default\s+(D|d)omain\s+(N|n)ame:\s+${DOMAIN_NAME} -> Record
+

@@ -1,0 +1,25 @@
+Value DOMAIN_NAME (\S+)
+Value DOMAIN_INDEX (\d+)
+Value DOMAIN_STATE (\S+)
+Value DOMAIN_AUTHENTICATION_SCHEME (\S+)
+Value DOMAIN_ACCOUNTING_SCHEME (\S+)
+Value DOMAIN_AUTHORIZATION_SCHEME (\S+)
+Value DOMAIN_SERVICE_SCHEME (\S+)
+Value DOMAIN_RADIUS_TEMPLATE (\S+)
+Value DOMAIN_TACACS_TEMPLATE (\S+)
+Value DOMAIN_PUSH_URL_ADDRESS (\S+)
+Value DOMAIN_FLOW_STATISTIC (\S+)
+
+Start
+  ^\s*Domain-name\s+:\s+${DOMAIN_NAME}
+  ^\s*Domain-index\s+:\s+${DOMAIN_INDEX}
+  ^\s*Domain-state\s+:\s+${DOMAIN_STATE}
+  ^\s*Authentication-scheme-name\s+:\s+${DOMAIN_AUTHENTICATION_SCHEME}
+  ^\s*Accounting-scheme-name\s+:\s+${DOMAIN_ACCOUNTING_SCHEME}
+  ^\s*Authorization-scheme-name\s+:\s+${DOMAIN_AUTHORIZATION_SCHEME}
+  ^\s*Service-scheme-name\s+:\s+${DOMAIN_SERVICE_SCHEME}
+  ^\s*RADIUS-server-template\s+:\s+${DOMAIN_RADIUS_TEMPLATE}
+  ^\s*HWTACACS-server-template\s+:\s+${DOMAIN_TACACS_TEMPLATE}
+  ^\s*Push-url-address\s+:\s+${DOMAIN_PUSH_URL_ADDRESS}
+  ^\s*Flow-statistic\s+:\s+${DOMAIN_FLOW_STATISTIC} -> Record
+

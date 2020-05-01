@@ -1,0 +1,15 @@
+Value Required INTERFACE (\S+)
+Value PHY_STATE (UP|DOWN)
+Value PROTO_STATE (UP|DOWN)
+Value DESCRIPTION (.*?)
+Value PORT_MODE (Switch|Routed)
+Value LINK_TYPE (access|trunk|hybrid)
+Value PVID (\d+)
+Value MFU (\d+)
+
+Start
+  ^${INTERFACE}\s+current\s+state\s+:\s+${PHY_STATE}
+  ^Line\s+protocol\s+current\s+state\s+:\s+${PROTO_STATE}
+  ^Description:${DESCRIPTION}$$
+  ^${PORT_MODE}\s+Port,\s+Link-type\s+:\s+${LINK_TYPE}\S*,
+  ^PVID\s+:\s+${PVID},\s+\S+\s+:\s+\S+,\s+The\s+Maximum\s+Frame\s+Length\s+is\s+${MFU} -> Record

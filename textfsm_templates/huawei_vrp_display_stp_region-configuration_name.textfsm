@@ -1,0 +1,4 @@
+Value REGION_NAME (\S+)
+
+Start
+  ^\s+Region\s+name\s+:${REGION_NAME} -> Record

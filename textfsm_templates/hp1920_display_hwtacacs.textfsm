@@ -1,0 +1,29 @@
+Value TEMPLATE_NAME (\S+)
+Value PRIMARY_AUTHENTICATION_SERVER (\S+)
+Value PRIMARY_AUTHORIZATION_SERVER (\S+)
+Value PRIMARY_ACCOUNTING_SERVER (\S+)
+Value SECONDARY_AUTHENTICATION_SERVER (\S+)
+Value SECONDARY_AUTHORIZATION_SERVER (\S+)
+Value SECONDARY_ACCOUNTING_SERVER (\S+)
+Value CURRENT_AUTHENTICATION_SERVER (\S+)
+Value CURRENT_AUTHORIZATION_SERVER (\S+)
+Value CURRENT_ACCOUNTING_SERVER (\S+)
+Value QUIET_INTERVAL_MIN (\d+)
+Value RESPONSE_TIMEOUT_SEC (\d+)
+Value DOMAIN_INCLUDED (\S+)
+
+Start
+  ^\s*HWTACACS-server\s+template\s+name\s+:\s+${TEMPLATE_NAME}
+  ^\s*Primary-authentication-server\s+:\s+${PRIMARY_AUTHENTICATION_SERVER}:\d+
+  ^\s*Primary-authorization-server\s+:\s+${PRIMARY_AUTHORIZATION_SERVER}:\d+
+  ^\s*Primary-accounting-server\s+:\s+${PRIMARY_ACCOUNTING_SERVER}:\d+
+  ^\s*Secondary-authentication-server\s+:\s+${SECONDARY_AUTHENTICATION_SERVER}:\d+
+  ^\s*Secondary-authorization-server\s+:\s+${SECONDARY_AUTHORIZATION_SERVER}:\d+
+  ^\s*Secondary-accounting-server\s+:\s+${SECONDARY_ACCOUNTING_SERVER}:\d+
+  ^\s*Current-authentication-server\s+:\s+${CURRENT_AUTHENTICATION_SERVER}:\d+
+  ^\s*Current-authorization-server\s+:\s+${CURRENT_AUTHORIZATION_SERVER}:\d+
+  ^\s*Current-accounting-server\s+:\s+${CURRENT_ACCOUNTING_SERVER}:\d+
+  ^\s*Quiet-interval\(min\)\s+:\s+${QUIET_INTERVAL_MIN}
+  ^\s*Response-timeout-interval\(sec\)\s+:\s+${RESPONSE_TIMEOUT_SEC}
+  ^\s*Username\s+format\s+:\s+${DOMAIN_INCLUDED} -> Record
+

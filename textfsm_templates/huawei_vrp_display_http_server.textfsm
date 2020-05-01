@@ -1,0 +1,7 @@
+Value Required HTTP_STATUS (\S+)
+Value Required HTTPS_STATUS (\S+)
+
+Start
+  ^\s*HTTP\s+Server\s+Status\s+:\s+${HTTP_STATUS}
+  ^\s*HTTP\s+Secure-server\s+Status\s+:\s+${HTTPS_STATUS} -> Record
+

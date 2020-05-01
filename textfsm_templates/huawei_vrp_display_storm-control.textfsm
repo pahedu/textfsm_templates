@@ -1,0 +1,16 @@
+Value INTERFACE (\S+)
+Value TRAFFIC_TYPE (Broadcast|Multicast|Unicast)
+Value MIN_RATE (\d+)
+Value MAX_RATE (\d+)
+Value MODE (\S+)
+Value ACTION (\S+)
+Value PUNISH_STATUS (\S+)
+Value TRAP (\S+)
+Value LOG (\S+)
+Value INTERVAL (\d+)
+Value LAST_PUNISH (\S+)
+
+Start
+  ^\s*${INTERFACE}\s+${TRAFFIC_TYPE}\s+${MIN_RATE}\s+${MODE}\s+${ACTION}\s+${PUNISH_STATUS}\s+${TRAP}\s+${LOG}\s+${INTERVAL}\s+${LAST_PUNISH}
+  ^\s*/${MAX_RATE} -> Record
+

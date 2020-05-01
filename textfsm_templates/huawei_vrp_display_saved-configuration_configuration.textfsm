@@ -1,0 +1,13 @@
+Value BACKUP_STATUS (Enable|Disable)
+Value BACKUP_SERVER_ADDRESS (\S+)
+Value BACKUP_SERVER_MODE (\S+)
+Value BACKUP_SERVER_USER (\S+)
+Value BACKUP_SERVER_PATH (\S+)
+
+Start
+  ^\s*Auto\s+backup\s+configuration\s+status\s+:\s+${BACKUP_STATUS}
+  ^\s*Server\s+IP\s+:\s+${BACKUP_SERVER_ADDRESS}
+  ^\s*Transport-type\s+:\s+${BACKUP_SERVER_MODE}
+  ^\s*Server\s+path\s+:\s+${BACKUP_SERVER_PATH}
+  ^\s*User\s+:\s+${BACKUP_SERVER_USER} -> Record
+

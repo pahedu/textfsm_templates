@@ -1,0 +1,4 @@
+Value Required SERVER_STATUS (\S+)
+
+Start
+  ^\s*TELNET\s+IPv4\s+server\s+:${SERVER_STATUS} -> Record

@@ -1,0 +1,6 @@
+Value DOT1X_INDEX (\d+)
+Value DOT1X_PROFILE_NAME (\S+)
+
+Start
+  ^\s*${DOT1X_INDEX}\s+${DOT1X_PROFILE_NAME} -> Record
+

@@ -1,0 +1,20 @@
+Value Required SERVER_TEMPLATE_NAME (\S+)
+Value SHARED_SECRET_KEY (.+)
+Value TIMEOUT (\d+)
+Value RETRANSMISSION (\d+)
+Value DEAD_TIME (\d+)
+Value DOMAIN_INCLUDED (\S+)
+Value DETECT_INTERVAL (\d+)
+Value List AUTH_SERVER (\S+)
+Value List WEIGHT (\S+)
+
+Start
+  ^\s*Server-template-name\s+:\s+${SERVER_TEMPLATE_NAME}
+  ^\s*Shared-secret-key\s+:\s+${SHARED_SECRET_KEY}
+  ^\s*Timeout-interval\(in second\)\s+:\s+${TIMEOUT}
+  ^\s*Retransmission\s+:\s+${RETRANSMISSION}
+  ^\s*Dead time\(in minute\)\s+:\s+${DEAD_TIME}
+  ^\s*Domain-included\s+:\s+${DOMAIN_INCLUDED}
+  ^\s*Detect-interval\(in second\)\s+:\s+${DETECT_INTERVAL}
+  ^\s*Authentication Server\s+1\s+:\s+${AUTH_SERVER}\s+\S+\s+Weight:${WEIGHT}
+  ^\s*Authentication Server\s+2\s+:\s+${AUTH_SERVER}\s+\S+\s+Weight:${WEIGHT} -> Record

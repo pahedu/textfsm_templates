@@ -1,0 +1,16 @@
+Value Required LOCAL_INTERFACE (\S+)
+Value CHASSIS_ID (.+?)
+Value NEIGHBOR_PORT_ID (.*?)
+Value NEIGHBOR (.+?)
+Value SYS_DESCRIPTION (.+?)
+Value SYS_CAPABILITIES (.*?)
+
+
+Start
+  ^${LOCAL_INTERFACE}\s+has\s+\S*\s+neighbor\(s\):
+  ^Chassis\s+ID\s+:${CHASSIS_ID}$$
+  ^Port\s+ID\s+:${NEIGHBOR_PORT_ID}$$
+  ^System\s+name\s+:${NEIGHBOR}$$
+  ^System\s+description\s+:${SYS_DESCRIPTION}$$
+  ^System\s+capabilities\s+enabled\s+:${SYS_CAPABILITIES}$$ -> Record
+

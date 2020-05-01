@@ -1,0 +1,5 @@
+Value Required NTP_SERVER (\S+)
+
+
+Start
+  ^\s*clock source:\s+${NTP_SERVER} -> Record

@@ -1,0 +1,9 @@
+Value MAC_ADDRESS (\S+)
+Value VLAN (\d+)
+Value VSI (\S+)
+Value BD (\S+)
+Value INTERFACE (\S+)
+Value TYPE (\S+)
+
+Start
+  ^\s*${MAC_ADDRESS}\s+${VLAN}/${VSI}(/|)(${BD}|)\s+${INTERFACE}\s+${TYPE} -> Record

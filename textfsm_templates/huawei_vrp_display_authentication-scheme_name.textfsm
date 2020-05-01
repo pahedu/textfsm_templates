@@ -1,0 +1,8 @@
+Value AUTHENTICATION_SCHEME_NAME (\S+)
+Value List AUTHENTICATION_METHOD (\S+)
+
+Start
+  ^\s*Authentication-scheme-name\s+:\s+${AUTHENTICATION_SCHEME_NAME}
+  ^\s*Authentication-method\s+:\s+${AUTHENTICATION_METHOD}
+  ^\s*Authentication-method\s+:\s+${AUTHENTICATION_METHOD} -> Record
+

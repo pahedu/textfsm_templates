@@ -1,0 +1,7 @@
+Value VLAN_ID (\d+)
+Value VLAN_STATUS (enable|disable)
+Value VLAN_NAME (\S+)
+
+Start
+  ^\s*${VLAN_ID}\s+${VLAN_STATUS}\s+\S+\s+\S+\s+\S+\s+${VLAN_NAME} -> Record
+

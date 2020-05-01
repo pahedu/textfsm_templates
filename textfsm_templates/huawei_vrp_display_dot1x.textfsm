@@ -1,0 +1,22 @@
+Value INTERFACE (\S+)
+Value PROTO_STATE (Enabled|Disabled)
+Value ACCESS_PROFILE (\S+)
+Value AUTH_MODE (.+)
+Value AUTH_METHOD (.+)
+Value REAUTH_STATE (\S+)
+Value DOT1X_RETRY (\d+)
+Value AUTH_USERS (\d+)
+Value MAX_USERS (\d+)
+Value CURRENT_USERS (\d+)
+
+Start
+  ^\s*${INTERFACE}\s+status:\s+\S+\s+802.1x\s+protocol\s+is\s+${PROTO_STATE}
+  ^\s*Dot1x\s+access\s+profile\s+is\s+${ACCESS_PROFILE}
+  ^\s*Authentication\s+mode\s+is\s+${AUTH_MODE}
+  ^\s*Authentication\s+method\s+is\s+${AUTH_METHOD}
+  ^\s*Reauthentication\s+is\s+${REAUTH_STATE}
+  ^\s*Dot1x\s+retry\s+times:\s+${DOT1X_RETRY}
+  ^\s*Authenticating\s+users:\s+${AUTH_USERS}
+  ^\s*Maximum\s+users:\s+${MAX_USERS}
+  ^\s*Current\s+users:\s+${CURRENT_USERS} -> Record
+

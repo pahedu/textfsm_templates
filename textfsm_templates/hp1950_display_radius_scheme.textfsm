@@ -1,0 +1,11 @@
+Value SERVER_TEMPLATE_NAME (\S+)
+Value TIMEOUT (\d+)
+Value DOMAIN_INCLUDED (\S+)
+Value List AUTH_SERVER (\S+)
+
+Start
+  ^\s*RADIUS scheme name:\s+${SERVER_TEMPLATE_NAME}
+  ^\s*IP\s*:\s+${AUTH_SERVER}\s+Port:\s+(1812|1645)
+  ^\s*Timeout Interval\(seconds\)\s+:\s+${TIMEOUT}
+  ^\s*User Name Format\s+:\s+${DOMAIN_INCLUDED} -> Record
+

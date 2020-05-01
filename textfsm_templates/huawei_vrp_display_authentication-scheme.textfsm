@@ -1,0 +1,5 @@
+Value AUTH_SCHEME_NAME (\S+)
+Value AUTH_METHOD (.*)
+
+Start
+  ^\s*${AUTH_SCHEME_NAME}\s+${AUTH_METHOD}$$ -> Record

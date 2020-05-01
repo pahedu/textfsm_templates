@@ -1,0 +1,5 @@
+Value COMMUNITY_NAME (.*)
+
+Start
+  ^\s*Community\s+name:${COMMUNITY_NAME}$$ -> Record
+

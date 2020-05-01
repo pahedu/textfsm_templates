@@ -1,0 +1,35 @@
+Value DOT1X_PROFILE_NAME (\S+)
+Value DOT1X_AUTH_METHOD (\S+)
+Value DOT1X_PORT_CONTROL (\S+)
+Value DOT1X_REAUTH (\S+)
+Value DOT1X_NO_RESPONSE_AUTHORIZATION (\S+)
+Value DOT1X_TRIGGER_CONDITION (.*)
+Value DOT1X_UNICAST_TRIGGER (\S+)
+Value DOT1X_TRIGGER_DHCP (\S+)
+Value DOT1X_HANDSHAKE (\S+)
+Value DOT1X_HANDSHAKE_TYPE (\S+)
+Value DOT1X_MAX_RETRY (\d+)
+Value DOT1X_REAUTH_PERIOD (\S+)
+Value DOT1X_CLIENT_TIMEOUT (\S+)
+Value DOT1X_HANDSHAKE_PERIOD (\S+)
+Value DOT1X_LAG_HANDSHAKE_PERIOD (\S+)
+Value DOT1X_BOUND_AUTH_PROFILE (\S+)
+
+Start
+  ^\s*Profile\s+Name\s+:\s+${DOT1X_PROFILE_NAME}
+  ^\s*Authentication\s+method\s+:\s+${DOT1X_AUTH_METHOD}
+  ^\s*Port\s+control\s+:\s+${DOT1X_PORT_CONTROL}
+  ^\s*Re-authen\s+:\s+${DOT1X_REAUTH}
+  ^\s*Client-no-response\s+authorize\s+:\s+${DOT1X_NO_RESPONSE_AUTHORIZATION}
+  ^\s*Trigger\s+condition\s+:\s+${DOT1X_TRIGGER_CONDITION}
+  ^\s*Unicast\s+trigger\s+:\s+${DOT1X_UNICAST_TRIGGER}
+  ^\s*Trigger\s+dhcp-bind\s+:\s+${DOT1X_TRIGGER_DHCP}
+  ^\s*Handshake\s+:\s+${DOT1X_HANDSHAKE}
+  ^\s*Handshake\s+packet-type\s+:\s+${DOT1X_HANDSHAKE_TYPE}
+  ^\s*Max\s+retry\s+value\s+:\s+${DOT1X_MAX_RETRY}
+  ^\s*Reauthen\s+Period\s+:\s+${DOT1X_REAUTH_PERIOD}
+  ^\s*Client\s+Timeout\s+:\s+${DOT1X_CLIENT_TIMEOUT}
+  ^\s*Handshake\s+Period\s+:\s+${DOT1X_HANDSHAKE_PERIOD}
+  ^\s*Eth-trunk\s+handshake\s+period\s+:\s+${DOT1X_LAG_HANDSHAKE_PERIOD}
+  ^\s*Bound\s+authentication\s+profile\s+:\s+${DOT1X_BOUND_AUTH_PROFILE} -> Record
+

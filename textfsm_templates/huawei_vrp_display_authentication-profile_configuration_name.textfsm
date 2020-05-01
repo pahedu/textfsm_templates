@@ -1,0 +1,77 @@
+Value PROFILE_NAME (\S+)
+Value DOT1X_ACCESS_PROFILE_NAME (\S+)
+Value MAC_ACCESS_PROFILE_NAME (\S+)
+Value PORTAL_ACCESS_PROFILE_NAME (\S+)
+Value FREE_RULE_TEMPLATE (\S+)
+Value FORCE_DOMAIN (\S+)
+Value DOT1X_FORCE_DOMAIN (\S+)
+Value MAC_FORCE_DOMAIN (\S+)
+Value PORTAL_FORCE_DOMAIN (\S+)
+Value DEFAULT_DOMAIN (\S+)
+Value DOT1X_DEFAULT_DOMAIN (\S+)
+Value MAC_DEFAULT_DOMAIN (\S+)
+Value PORTAL_DEFAULT_DOMAIN (\S+)
+Value PERMIT_DOMAIN (\S+)
+Value AUTH_HANDSHAKE (\S+)
+Value AUTH_HANDSHKE_PERIOD (\S+)
+Value AUTH_FAIL_REAUTH_PERIOD (\S+)
+Value PREAUTH_REAUTH_PERIOD (\S+)
+Value AUTH_FAIL_AGING_TIME (\S+)
+Value PREAUTH_AGING_TIME (\S+)
+Value DOT1X_MAC_BYPASS (\S+)
+Value SINGLE_ACCESS (\S+)
+Value DEVICE_AUTHORIZE_SERVICE_SCHEME (\S+)
+Value AUTH_MODE (\S+)
+Value AUTH_FAIL_AUTHORIZE_SERVICE_SCHEME (\S+)
+Value AUTH_SERVER_DOWN_AUTHORIZE_SERVICE_SCHEME (\S+)
+Value PREAUTH_AUTHORIZE_SERVICE_SCHEME (\S+)
+Value SECURITY_NAME_DELIMITER (\S+)
+Value DOMAIN_NAME_DELIMITER (\S+)
+Value DOMAIN_LOCATION (\S+)
+Value DOMAINNAME_PARSE_DIRECTION (\S+)
+Value SVF_FLAG (\S+)
+Value IP_STATIC_USER (\S+)
+Value ROAM_REALTIME_ACCOUNTING (\S+)
+Value UPDATE_IP_REALTIME_ACCOUNTING (\S+)
+Value LINKDOWN_OFFLINE_DELAY_TIME (\S+)
+Value CONTROL_DERICTION (\S+)
+
+
+Start
+  ^\s*Profile\s+name\s+:\s+${PROFILE_NAME}
+  ^\s*Dot1x\s+access\s+profile\s+name\s+:\s+${DOT1X_ACCESS_PROFILE_NAME}
+  ^\s*Mac\s+access\s+profile\s+name\s+:\s+${MAC_ACCESS_PROFILE_NAME}
+  ^\s*Portal\s+access\s+profile\s+name\s+:\s+${PORTAL_ACCESS_PROFILE_NAME}
+  ^\s*Free\s+rule\s+template\s+:\s+${FREE_RULE_TEMPLATE}
+  ^\s*Force\s+domain\s+:\s+${FORCE_DOMAIN}
+  ^\s*Dot1x\s+force\s+domain\s+:\s+${DOT1X_FORCE_DOMAIN}
+  ^\s*Mac-authen\s+force\s+domain\s+:\s+${MAC_FORCE_DOMAIN}
+  ^\s*Portal\s+force\s+domain\s+:\s+${PORTAL_FORCE_DOMAIN}
+  ^\s*Default\s+domain\s+:\s+${DEFAULT_DOMAIN}
+  ^\s*Dot1x\s+default\s+domain\s+:\s+${DOT1X_DEFAULT_DOMAIN}
+  ^\s*Mac-authen\s+default\s+domain\s+:\s+${MAC_DEFAULT_DOMAIN}
+  ^\s*Portal\s+default\s+domain\s+:\s+${PORTAL_DEFAULT_DOMAIN}
+  ^\s*Permit\s+domain\s+:\s+${PERMIT_DOMAIN}
+  ^\s*Authentication\s+handshake\s+:\s+${AUTH_HANDSHAKE}
+  ^\s*Authentication\s+handshake\s+period\s+:\s+${AUTH_HANDSHKE_PERIOD}
+  ^\s*Auth-fail\s+re-auth\s+period\s+:\s+${AUTH_FAIL_REAUTH_PERIOD}
+  ^\s*Pre-auth\s+re-auth\s+period\s+:\s+${PREAUTH_REAUTH_PERIOD}
+  ^\s*Auth-fail\s+aging time\s+:\s+${AUTH_FAIL_AGING_TIME}
+  ^\s*Pre-auth\s+aging\s+time\s+:\s+${PREAUTH_AGING_TIME}
+  ^\s*Dot1x-mac-bypass\s+:\s+${DOT1X_MAC_BYPASS}
+  ^\s*Single-access\s+:\s+${SINGLE_ACCESS}
+  ^\s*Device-type\s+authorize\s+service-scheme\s+:\s+${DEVICE_AUTHORIZE_SERVICE_SCHEME}
+  ^\s*Authentication\s+mode\s+:\s+${AUTH_MODE}
+  ^\s*Authen-fail\s+authorize\s+service-scheme\s+:\s+${AUTH_FAIL_AUTHORIZE_SERVICE_SCHEME}
+  ^\s*Authen-server-down\s+authorize\s+service-scheme\s+:\s+${AUTH_SERVER_DOWN_AUTHORIZE_SERVICE_SCHEME}
+  ^\s*Pre-authen\s+authorize\s+service-scheme\s+:\s+${PREAUTH_AUTHORIZE_SERVICE_SCHEME}
+  ^\s*Security-name-delimiter\s+:\s+${SECURITY_NAME_DELIMITER}
+  ^\s*Domain-name-delimiter\s+:\s+${DOMAIN_NAME_DELIMITER}
+  ^\s*Domain-location\s+:\s+${DOMAIN_LOCATION}
+  ^\s*Domainname-parse-direction\s+:\s+${DOMAINNAME_PARSE_DIRECTION}
+  ^\s*SVF\s+flag\s+:\s+${SVF_FLAG}
+  ^\s*Ip-static-user\s+:\s+${IP_STATIC_USER}
+  ^\s*Roam-realtime-accounting\s+:\s+${ROAM_REALTIME_ACCOUNTING}
+  ^\s*Update-IP-realtime-accounting\s+:\s+${UPDATE_IP_REALTIME_ACCOUNTING}
+  ^\s*Linkdown\s+offline\s+delay\s+time\s+:\s+${LINKDOWN_OFFLINE_DELAY_TIME}
+  ^\s*Control\s+direction\s+:\s+${CONTROL_DERICTION} -> Record

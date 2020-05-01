@@ -1,0 +1,7 @@
+Value INTERFACE (\S+)
+Value CDP_STATUS (enabled|disabled)
+
+Start
+  ^\s*Interface\s+${INTERFACE}:
+  ^\s*CDP\s+Status\s+:${CDP_STATUS} -> Record
+

@@ -1,0 +1,10 @@
+Value USERNAME (\S+)
+Value PASSWORD (.+)
+Value PRIVILEGE (\d+)
+Value SERVICES (.+)
+
+Start
+  ^\s+local-user ${USERNAME} password irreversible-cipher ${PASSWORD}$$
+  ^\s+local-user ${USERNAME} privilege level ${PRIVILEGE}$$
+  ^\s+local-user ${USERNAME} service-type ${SERVICES}$$ -> Record
+

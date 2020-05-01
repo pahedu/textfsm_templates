@@ -1,0 +1,8 @@
+Value ACCOUNTING_SCHEME_NAME (\S+)
+Value List ACCOUNTING_METHOD (\S+)
+
+Start
+  ^\s*Accounting-scheme-name\s+:\s+${ACCOUNTING_SCHEME_NAME}
+  ^\s*Accounting-method\s+:\s+${ACCOUNTING_METHOD}
+  ^\s*Accounting-method\s+:\s+${ACCOUNTING_METHOD} -> Record
+

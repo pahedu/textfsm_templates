@@ -1,0 +1,13 @@
+Value SERVICE_SCHEME_NAME (\S+)
+Value SERVICE_SCHEME_PRIM_DNS (\S+)
+Value SERVICE_SCHEME_SEC_DNS (\S+)
+Value SERVICE_SCHEME_ADMIN_LEVEL (\d+)
+Value SERVICE_SCHEME_REDIRECT_URL (\S+)
+
+Start
+  ^\s*service-scheme-name\s+:\s+${SERVICE_SCHEME_NAME}
+  ^\s*service-scheme-primary-dns\s+:\s+${SERVICE_SCHEME_PRIM_DNS}
+  ^\s*service-scheme-secondary-dns\s+:\s+${SERVICE_SCHEME_SEC_DNS}
+  ^\s*service-scheme-adminlevel\s+:\s+${SERVICE_SCHEME_ADMIN_LEVEL}
+  ^\s*service-scheme-redirect-acl-id\s*:\s+${SERVICE_SCHEME_REDIRECT_URL} -> Record
+

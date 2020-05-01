@@ -1,0 +1,14 @@
+Value SERVER_TEMPLATE_NAME (\S+)
+Value TIMEOUT (\d+)
+Value RETRANSMISSION (\d+)
+Value DOMAIN_INCLUDED (\S+)
+Value List AUTH_SERVER (\S+)
+Value List AUTH_SERVER_STATE (\S+)
+
+Start
+  ^\s*SchemeName\s+:\s+${SERVER_TEMPLATE_NAME}
+  ^\s*IP:\s+${AUTH_SERVER}\s+Port:\s+(1812|1645)\s+State:\s+${AUTH_SERVER_STATE}
+  ^\s*Interval\s+for\s+timeout\(second\)\s+:\s+${TIMEOUT}
+  ^\s*Retransmission\s+times\s+for\s+timeout\s+:\s+${RETRANSMISSION}
+  ^\s*Username\s+format\s+:\s+${DOMAIN_INCLUDED} -> Record
+

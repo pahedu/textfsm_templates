@@ -1,0 +1,5 @@
+Value DOMAIN_NAME (\S+)
+
+Start
+  ^\s*Default\s+Domain\s+Name:\s+${DOMAIN_NAME} -> Record
+

@@ -1,0 +1,32 @@
+Value TEMPLATE_NAME (\S+)
+Value PRIMARY_AUTHENTICATION_SERVER (\S+)
+Value PRIMARY_AUTHORIZATION_SERVER (\S+)
+Value PRIMARY_ACCOUNTING_SERVER (\S+)
+Value SECONDARY_AUTHENTICATION_SERVER (\S+)
+Value SECONDARY_AUTHORIZATION_SERVER (\S+)
+Value SECONDARY_ACCOUNTING_SERVER (\S+)
+Value CURRENT_AUTHENTICATION_SERVER (\S+)
+Value CURRENT_AUTHORIZATION_SERVER (\S+)
+Value CURRENT_ACCOUNTING_SERVER (\S+)
+Value SOURCE_ADDRESS (\S+)
+Value QUIET_INTERVAL_MIN (\d+)
+Value RESPONSE_TIMEOUT_SEC (\d+)
+Value DOMAIN_INCLUDED (\S+)
+Value TRAFFIC_UNIT (\S+)
+
+Start
+  ^\s*HWTACACS-server\s+template\s+name\s+:\s+${TEMPLATE_NAME}
+  ^\s*Primary-authentication-server\s+:\s+${PRIMARY_AUTHENTICATION_SERVER}:\d+:\S+
+  ^\s*Primary-authorization-server\s+:\s+${PRIMARY_AUTHORIZATION_SERVER}:\d+:\S+
+  ^\s*Primary-accounting-server\s+:\s+${PRIMARY_ACCOUNTING_SERVER}:\d+:\S+
+  ^\s*Secondary-authentication-server\s+:\s+${SECONDARY_AUTHENTICATION_SERVER}:\d+:\S+
+  ^\s*Secondary-authorization-server\s+:\s+${SECONDARY_AUTHORIZATION_SERVER}:\d+:\S+
+  ^\s*Secondary-accounting-server\s+:\s+${SECONDARY_ACCOUNTING_SERVER}:\d+:\S+
+  ^\s*Current-authentication-server\s+:\s+${CURRENT_AUTHENTICATION_SERVER}:\d+:\S+
+  ^\s*Current-authorization-server\s+:\s+${CURRENT_AUTHORIZATION_SERVER}:\d+:\S+
+  ^\s*Current-accounting-server\s+:\s+${CURRENT_ACCOUNTING_SERVER}:\d+:\S+
+  ^\s*Source-IP-address\s+:\s+${SOURCE_ADDRESS}
+  ^\s*Quiet-interval\(min\)\s+:\s+${QUIET_INTERVAL_MIN}
+  ^\s*Response-timeout-Interval\(sec\)\s+:\s+${RESPONSE_TIMEOUT_SEC}
+  ^\s*Domain-included\s+:\s+${DOMAIN_INCLUDED}
+  ^\s*Traffic-unit\s+:\s+${TRAFFIC_UNIT} -> Record

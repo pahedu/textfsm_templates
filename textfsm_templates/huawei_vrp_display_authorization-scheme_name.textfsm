@@ -1,0 +1,42 @@
+Value AUTHORIZATION_SCHEME_NAME (\S+)
+Value List AUTHORIZATION_METHOD (\S+)
+Value AUTHORIZATION_CMD_0 (\S+)
+Value AUTHORIZATION_CMD_1 (\S+)
+Value AUTHORIZATION_CMD_2 (\S+)
+Value AUTHORIZATION_CMD_3 (\S+)
+Value AUTHORIZATION_CMD_4 (\S+)
+Value AUTHORIZATION_CMD_5 (\S+)
+Value AUTHORIZATION_CMD_6 (\S+)
+Value AUTHORIZATION_CMD_7 (\S+)
+Value AUTHORIZATION_CMD_8 (\S+)
+Value AUTHORIZATION_CMD_9 (\S+)
+Value AUTHORIZATION_CMD_10 (\S+)
+Value AUTHORIZATION_CMD_11 (\S+)
+Value AUTHORIZATION_CMD_12 (\S+)
+Value AUTHORIZATION_CMD_13 (\S+)
+Value AUTHORIZATION_CMD_14 (\S+)
+Value AUTHORIZATION_CMD_15 (\S+)
+Value AUTHORIZATION_CMD_NO_RESPONSE_POLICY (\S+)
+
+Start
+  ^\s*Authorization-scheme-name\s+:\s+${AUTHORIZATION_SCHEME_NAME}
+  ^\s*Authorization-method\s+:\s+${AUTHORIZATION_METHOD}
+  ^\s*Authorization-method\s+:\s+${AUTHORIZATION_METHOD}
+  ^\s*Authorization-cmd\s+level\s+0\s+:\s+${AUTHORIZATION_CMD_0}
+  ^\s*Authorization-cmd\s+level\s+1\s+:\s+${AUTHORIZATION_CMD_1}
+  ^\s*Authorization-cmd\s+level\s+2\s+:\s+${AUTHORIZATION_CMD_2}
+  ^\s*Authorization-cmd\s+level\s+3\s+:\s+${AUTHORIZATION_CMD_3}
+  ^\s*Authorization-cmd\s+level\s+4\s+:\s+${AUTHORIZATION_CMD_4}
+  ^\s*Authorization-cmd\s+level\s+5\s+:\s+${AUTHORIZATION_CMD_5}
+  ^\s*Authorization-cmd\s+level\s+6\s+:\s+${AUTHORIZATION_CMD_6}
+  ^\s*Authorization-cmd\s+level\s+7\s+:\s+${AUTHORIZATION_CMD_7}
+  ^\s*Authorization-cmd\s+level\s+8\s+:\s+${AUTHORIZATION_CMD_8}
+  ^\s*Authorization-cmd\s+level\s+9\s+:\s+${AUTHORIZATION_CMD_9}
+  ^\s*Authorization-cmd\s+level\s+10\s+:\s+${AUTHORIZATION_CMD_10}
+  ^\s*Authorization-cmd\s+level\s+11\s+:\s+${AUTHORIZATION_CMD_11}
+  ^\s*Authorization-cmd\s+level\s+12\s+:\s+${AUTHORIZATION_CMD_12}
+  ^\s*Authorization-cmd\s+level\s+13\s+:\s+${AUTHORIZATION_CMD_13}
+  ^\s*Authorization-cmd\s+level\s+14\s+:\s+${AUTHORIZATION_CMD_14}
+  ^\s*Authorization-cmd\s+level\s+15\s+:\s+${AUTHORIZATION_CMD_15}
+  ^\s*Authorization-cmd\s+no-response-policy\s+:\s+${AUTHORIZATION_CMD_NO_RESPONSE_POLICY} -> Record
+

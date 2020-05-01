@@ -1,0 +1,5 @@
+Value INSTANCE (\d+)
+Value VLANS (.+)
+
+Start
+  ^\s+${INSTANCE}\s+${VLANS}$$ -> Record

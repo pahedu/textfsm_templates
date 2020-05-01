@@ -1,0 +1,5 @@
+Value SYSLOG_SERVER (\d+\.\d+\.\d+\.\d+)
+
+Start
+  ^\s+${SYSLOG_SERVER},\s+channel\s+number\s+\d+,\s+channel\s+name -> Record
+

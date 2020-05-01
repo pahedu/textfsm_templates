@@ -1,0 +1,13 @@
+Value DOMAIN_NAME_DELIMITER (\S+)
+Value DOMAIN_PARSE_DIRECTION (\S+)
+Value DOMAIN_LOCATION (\S+)
+Value DOMAIN_ADMIN_USER_DEFAULT (\S+)
+Value DOMAIN_NORMAL_USER_DEFAULT (\S+)
+
+
+Start
+  ^\s*Domain\s+Name\s+Delimiter\s+:\s+${DOMAIN_NAME_DELIMITER}
+  ^\s*Domainname\s+parse\s+direction\s+:\s+${DOMAIN_PARSE_DIRECTION}
+  ^\s*Domainname\s+location\s+:\s+${DOMAIN_LOCATION}
+  ^\s*Administrator\s+user\s+default\s+domain:\s+${DOMAIN_ADMIN_USER_DEFAULT}
+  ^\s*Normal\s+user\s+default\s+domain\s+:\s+${DOMAIN_NORMAL_USER_DEFAULT} -> Record

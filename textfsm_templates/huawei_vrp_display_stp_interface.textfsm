@@ -1,0 +1,22 @@
+Value INTERFACE (\S+)
+Value INTERFACE_STATUS (\S+)
+Value PORT_PROTOCOL (Enabled|Disabled)
+Value PORT_ROLE (\S+)
+Value PORT_EDGED_CONFIG (\S+)
+Value PORT_EDGED_ACTIVE (\S+)
+Value BPDU_PROTECTION (Enabled|Disabled)
+Value PROTECTION_TYPE (\S+)
+Value STP_MODE (\S+)
+Value PORT_PROTOCOL_TYPE_CONFIG (\S+)
+Value PORT_PROTOCOL_TYPE_ACTIVE (\S+)
+
+
+Start
+  ^-{0,10}\[\S+\(${INTERFACE}\)\]\[${INTERFACE_STATUS}\]-{0,10}
+  ^\s+Port\s+Protocol\s+:${PORT_PROTOCOL}
+  ^\s+Port\s+Role\s+:${PORT_ROLE}
+  ^\s+Port\s+Edged\s+:Config=${PORT_EDGED_CONFIG}\s+\/\s+Active=${PORT_EDGED_ACTIVE}
+  ^\s+BPDU-Protection\s+:${BPDU_PROTECTION}
+  ^\s+Protection\s+Type\s+:${PROTECTION_TYPE}
+  ^\s+Port\s+STP\s+Mode\s+:${STP_MODE}
+  ^\s+Port\s+Protocol\s+Type\s+:Config=${PORT_PROTOCOL_TYPE_CONFIG}\s+\/\s+Active=${PORT_PROTOCOL_TYPE_ACTIVE} -> Record

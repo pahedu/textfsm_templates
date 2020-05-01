@@ -1,0 +1,11 @@
+Value DATE (\d+-\d+-\d+)
+Value TIME (\d+:\d+:\d+)
+Value DAY (Monday|Tuesday|Wednesday|Thursday|Friday|Saturday|Sunday)
+Value TIME_ZONE_NAME (\S+)
+Value TIME_ZONE_SHIFT (\+\S+|\-\S+)
+
+Start
+  ^\s*${DATE}\s+${TIME}
+  ^\s*${DAY}
+  ^\s*Time\s+Zone\(${TIME_ZONE_NAME}\)\s+:\s+UTC${TIME_ZONE_SHIFT} -> Record
+

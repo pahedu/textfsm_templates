@@ -1,0 +1,9 @@
+Value STP_MODE (\S+)
+Value CIST_BRIDGE (\S+)
+Value BPDU_PROTECTION (Enabled|Disabled)
+
+
+Start
+  ^-{0,10}\[CIST\s+Global\s+Info\]\[Mode\s+${STP_MODE}\]-{0,10}
+  ^CIST\s+Bridge\s+:${CIST_BRIDGE}
+  ^BPDU-Protection\s+:${BPDU_PROTECTION} -> Record

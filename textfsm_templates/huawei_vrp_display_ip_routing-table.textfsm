@@ -1,0 +1,11 @@
+Value ROUTE (\S+)
+Value ROUTE_PROTO (\S+)
+Value ROUTE_AD (\d+)
+Value ROUTE_COST (\d+)
+Value ROUTE_FLAG (\S+)
+Value ROUTE_NEXT_HOP (\S+)
+Value ROUTE_INTERFACE (\S+)
+
+Start
+  ^\s*${ROUTE}\s+${ROUTE_PROTO}\s+${ROUTE_AD}\s+${ROUTE_COST}\s+${ROUTE_FLAG}\s+${ROUTE_NEXT_HOP}\s+${ROUTE_INTERFACE} -> Record
+

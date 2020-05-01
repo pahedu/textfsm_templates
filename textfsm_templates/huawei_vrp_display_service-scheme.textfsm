@@ -1,0 +1,6 @@
+Value SERVICE_SCHEME_NAME (\S+)
+Value SERVICE_SCHEME_INDEX (\d+)
+
+Start
+  ^\s*${SERVICE_SCHEME_NAME}\s+${SERVICE_SCHEME_INDEX} -> Record
+
